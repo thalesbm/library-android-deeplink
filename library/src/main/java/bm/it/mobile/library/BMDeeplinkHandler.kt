@@ -1,6 +1,6 @@
 package bm.it.mobile.library
 
-interface BMDeeplinkHandler {
+abstract class BMDeeplinkHandler {
 
-
+    abstract fun setUpDeeplink()
 }
