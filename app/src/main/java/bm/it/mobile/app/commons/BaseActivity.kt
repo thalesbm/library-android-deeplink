@@ -1,4 +1,4 @@
-package bm.it.mobile.app
+package bm.it.mobile.app.commons
 
 import android.content.Intent
 import android.net.Uri

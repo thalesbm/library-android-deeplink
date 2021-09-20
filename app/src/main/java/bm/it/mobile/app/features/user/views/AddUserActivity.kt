@@ -1,11 +1,10 @@
-package bm.it.mobile.app.user
+package bm.it.mobile.app.features.user.views
 
 import android.os.Bundle
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
+import bm.it.mobile.app.commons.BaseActivity
 
-class
-AddUserActivity : AppCompatActivity() {
+class AddUserActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
