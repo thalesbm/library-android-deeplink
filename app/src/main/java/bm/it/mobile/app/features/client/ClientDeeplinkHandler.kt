@@ -1,12 +1,11 @@
 package bm.it.mobile.app.features.client
 
 import bm.it.mobile.library.BMFeatureDeeplinkHandler
-import kotlin.reflect.KFunction
 
 class ClientDeeplinkHandler: BMFeatureDeeplinkHandler() {
 
-    override fun setUpDeeplink(): Map<String, KFunction<Unit>> {
-        val deeplink = mutableMapOf<String, KFunction<Unit>>()
+    override fun configureDeeplink(): Map<String, () -> Unit> {
+        val deeplink = mutableMapOf<String, () -> Unit>()
         deeplink["client/add"] = ::goToAdd
         deeplink["client/list"] = ::goToList
         deeplink["client/select"] = ::goToSelect

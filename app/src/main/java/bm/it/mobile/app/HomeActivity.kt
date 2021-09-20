@@ -6,7 +6,6 @@ import android.os.Bundle
 import bm.it.mobile.app.commons.BaseActivity
 import bm.it.mobile.app.features.user.views.AddUserActivity
 import bm.it.mobile.app.features.user.views.ListUserActivity
-import kotlinx.android.synthetic.main.activity_home.*
 import kotlin.reflect.KClass
 
 class HomeActivity : BaseActivity() {
@@ -14,14 +13,6 @@ class HomeActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-
-        goToListUserButton.setOnClickListener {
-            callDeepLink("app://list_user")
-        }
-
-        goToAddUserButton.setOnClickListener {
-            callDeepLink("app://add_user")
-        }
     }
 
     override fun onResume() {
