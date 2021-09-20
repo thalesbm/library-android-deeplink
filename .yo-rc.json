@@ -1,5 +1,5 @@
 {
   "generator-android-app": {
-    "appPackage": "deeplink"
+    "appPackage": "library-android-deeplink"
   }
 }

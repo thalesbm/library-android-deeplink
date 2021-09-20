@@ -1,13 +1,12 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion compileSDKVersion
     buildToolsVersion buildToolsVersion
-    
+
     defaultConfig {
-        applicationId "bm.it.library.deeplink"
         minSdkVersion minSDKVersion
         targetSdkVersion targetSDKVersion
         versionCode 1
@@ -28,8 +27,4 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
     implementation "androidx.appcompat:appcompat:$appCompactVersion"
-
-
-    implementation (project(':library'))
-
 }
