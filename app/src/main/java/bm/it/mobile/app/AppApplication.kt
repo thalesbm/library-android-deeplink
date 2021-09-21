@@ -7,13 +7,14 @@ import bm.it.mobile.library.BMDeeplinkBuilder
 import bm.it.mobile.library.BMDeeplinkHandler
 import bm.it.mobile.library.BMFeatureDeeplinkHandler
 
-class AppApplication: Application(), BMDeeplinkHandler {
+class AppApplication : Application(), BMDeeplinkHandler {
 
     override fun onCreate() {
         super.onCreate()
 
-        val t = BMDeeplinkBuilder()
-        t.analyseDeeplink(this, "user")
+        BMDeeplinkBuilder.Builder(
+            context = this
+        ).setupDeeplink(handler = this).build().init()
     }
 
     override fun setUpDeeplink(): MutableList<BMFeatureDeeplinkHandler> {

@@ -1,12 +1,9 @@
 package bm.it.mobile.app
 
-import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import bm.it.mobile.app.commons.BaseActivity
-import bm.it.mobile.app.features.user.views.AddUserActivity
-import bm.it.mobile.app.features.user.views.ListUserActivity
-import kotlin.reflect.KClass
+import bm.it.mobile.library.BMDeeplinkBuilder
 
 class HomeActivity : BaseActivity() {
 
@@ -19,15 +16,19 @@ class HomeActivity : BaseActivity() {
         super.onResume()
         val data: Uri? = intent?.data
 
-        when (data?.host) {
-            "user_home" -> redirectTo(HomeActivity::class)
-            "add_user" -> redirectTo(AddUserActivity::class)
-            "list_user" -> redirectTo(ListUserActivity::class)
-        }
+        BMDeeplinkBuilder.Builder(
+            context = this
+        ).redirectTo(deeplink = data?.host).build().init()
+
+//        when (data?.host) {
+//            "user_home" -> redirectTo(HomeActivity::class)
+//            "add_user" -> redirectTo(AddUserActivity::class)
+//            "list_user" -> redirectTo(ListUserActivity::class)
+//        }
     }
 
-    private fun redirectTo(to: KClass<*>) {
-        startActivity(Intent(this, to.java))
-        finish()
-    }
+//    private fun redirectTo(to: KClass<*>) {
+//        startActivity(Intent(this, to.java))
+//        finish()
+//    }
 }
