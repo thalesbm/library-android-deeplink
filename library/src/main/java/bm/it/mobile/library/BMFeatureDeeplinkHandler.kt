@@ -1,7 +1,7 @@
 package bm.it.mobile.library
 
-abstract class BMFeatureDeeplinkHandler {
+interface BMFeatureDeeplinkHandler {
 
-    abstract fun configureDeeplink(): Map<String, (() -> Unit)>
+    fun configureDeeplink(): Map<String, (() -> Unit)>
 
 }

@@ -2,7 +2,7 @@ package bm.it.mobile.app.features.user
 
 import bm.it.mobile.library.BMFeatureDeeplinkHandler
 
-class UserDeeplinkHandler : BMFeatureDeeplinkHandler() {
+class UserDeeplinkHandler : BMFeatureDeeplinkHandler {
 
     override fun configureDeeplink(): Map<String, () -> Unit> {
         val deeplink = mutableMapOf<String, () -> Unit>()

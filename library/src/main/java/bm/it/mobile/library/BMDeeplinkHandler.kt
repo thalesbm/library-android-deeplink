@@ -2,5 +2,5 @@ package bm.it.mobile.library
 
 interface BMDeeplinkHandler {
 
-    fun setUpDeeplink(): MutableList<BMFeatureDeeplinkHandler>
+    fun setupDeeplink(): MutableList<BMFeatureDeeplinkHandler>
 }

@@ -12,12 +12,13 @@ class AppApplication : Application(), BMDeeplinkHandler {
     override fun onCreate() {
         super.onCreate()
 
-        BMDeeplinkBuilder.Builder(
-            context = this
-        ).setupDeeplink(handler = this).build().init()
+        BMDeeplinkBuilder.Builder()
+            .setupDeeplink(handler = this)
+            .build()
+            .init()
     }
 
-    override fun setUpDeeplink(): MutableList<BMFeatureDeeplinkHandler> {
+    override fun setupDeeplink(): MutableList<BMFeatureDeeplinkHandler> {
         val features = mutableListOf<BMFeatureDeeplinkHandler>()
         features.add(UserDeeplinkHandler())
         features.add(ClientDeeplinkHandler())

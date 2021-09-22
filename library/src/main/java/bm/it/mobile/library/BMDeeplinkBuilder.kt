@@ -1,6 +1,5 @@
 package bm.it.mobile.library
 
-import android.content.Context
 import android.util.Log
 
 class BMDeeplinkBuilder private constructor() {
@@ -11,7 +10,6 @@ class BMDeeplinkBuilder private constructor() {
     }
 
     data class Builder(
-        val context: Context,
         var handler: BMDeeplinkHandler? = null,
         var deeplink: String? = null
     ) {
@@ -35,12 +33,12 @@ class BMDeeplinkBuilder private constructor() {
         private fun verifyDeeplink() {
             deeplinkHandler?.let { d ->
 
-                for (i in d.setUpDeeplink().indices) {
-                    val feature = d.setUpDeeplink()[i]
+                for (i in d.setupDeeplink().indices) {
+                    val feature = d.setupDeeplink()[i]
 
                     if (feature.configureDeeplink()[deeplink] != null) {
                         val item = feature.configureDeeplink()[deeplink]
-                        Log.d(TAG, "deeplink $deeplink found and method will be invoke")
+                        Log.d(TAG, "deeplink $deeplink has been found and method will be called")
                         item?.invoke()
                         break
                     }

@@ -1,8 +1,3 @@
 <resources>
     <string name="app_name">DeepLink Sample</string>
-
-    <string name="button_go_to_user">go to user</string>
-    <string name="button_go_to_list_user">go to list user</string>
-    <string name="button_go_to_add_user">go to add user</string>
-
 </resources>

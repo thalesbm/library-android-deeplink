@@ -16,9 +16,10 @@ class HomeActivity : BaseActivity() {
         super.onResume()
         val data: Uri? = intent?.data
 
-        BMDeeplinkBuilder.Builder(
-            context = this
-        ).redirectTo(deeplink = data?.host).build().init()
+        BMDeeplinkBuilder.Builder()
+            .redirectTo(deeplink = data?.host)
+            .build()
+            .init()
 
 //        when (data?.host) {
 //            "user_home" -> redirectTo(HomeActivity::class)
