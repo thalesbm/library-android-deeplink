@@ -1,22 +1,21 @@
 package bm.it.mobile.library
 
-import android.util.Log
+import android.net.Uri
 
 class BMDeeplinkBuilder private constructor() {
 
     companion object {
-        private val TAG = BMDeeplinkBuilder::class.simpleName
         private var deeplinkHandler: BMDeeplinkHandler? = null
     }
 
     data class Builder(
         var handler: BMDeeplinkHandler? = null,
-        var deeplink: String? = null
+        var deeplinkUri: Uri? = null
     ) {
 
         fun setupDeeplink(handler: BMDeeplinkHandler) = apply { this.handler = handler }
 
-        fun redirectTo(deeplink: String?) = apply { this.deeplink = deeplink }
+        fun redirectTo(deeplinkUri: Uri?) = apply { this.deeplinkUri = deeplinkUri }
 
         fun build() = apply { BMDeeplinkBuilder() }
 
@@ -25,25 +24,10 @@ class BMDeeplinkBuilder private constructor() {
                 deeplinkHandler = it
             }
 
-            deeplink?.let {
-                verifyDeeplink()
-            }
-        }
-
-        private fun verifyDeeplink() {
-            deeplinkHandler?.let { d ->
-
-                for (i in d.setupDeeplink().indices) {
-                    val feature = d.setupDeeplink()[i]
-
-                    if (feature.configureDeeplink()[deeplink] != null) {
-                        val item = feature.configureDeeplink()[deeplink]
-                        Log.d(TAG, "deeplink $deeplink has been found and method will be called")
-                        item?.invoke()
-                        break
-                    }
-                }
+            deeplinkUri?.let {
+                BMDeeplinkGod.verifyDeeplink(deeplinkHandler, it)
             }
         }
     }
 }
+
