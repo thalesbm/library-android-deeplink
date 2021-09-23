@@ -2,9 +2,9 @@ package bm.it.mobile.app.features.client.views
 
 import android.os.Bundle
 import android.widget.Toast
-import bm.it.mobile.app.commons.BaseActivity
+import androidx.appcompat.app.AppCompatActivity
 
-class SelectClientActivity : BaseActivity() {
+class SelectClientActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

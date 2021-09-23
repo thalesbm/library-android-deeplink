@@ -2,9 +2,9 @@ package bm.it.mobile.app.features.user.views
 
 import android.os.Bundle
 import android.widget.Toast
-import bm.it.mobile.app.commons.BaseActivity
+import androidx.appcompat.app.AppCompatActivity
 
-class RemoveUserActivity : BaseActivity() {
+class RemoveUserActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

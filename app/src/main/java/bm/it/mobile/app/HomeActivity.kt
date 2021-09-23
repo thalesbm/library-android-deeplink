@@ -1,10 +1,10 @@
 package bm.it.mobile.app
 
 import android.os.Bundle
-import bm.it.mobile.app.commons.BaseActivity
+import androidx.appcompat.app.AppCompatActivity
 import bm.it.mobile.library.BMDeeplinkBuilder
 
-class HomeActivity : BaseActivity() {
+class HomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
